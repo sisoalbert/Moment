@@ -1,0 +1,362 @@
+[
+  {
+    "base": "Milton Keynes, United Kingdom",
+    "chassis": "RB18",
+    "director": "Christian Horner",
+    "engine": "Red Bull Powertrains",
+    "fastest_laps": 82,
+    "first_team_entry": 1997,
+    "highest_race_finish": {
+      "number": 85,
+      "position": 1
+    },
+    "id": 1,
+    "logo": "https://media.api-sports.io/formula-1/teams/1.png",
+    "name": "Red Bull Racing",
+    "pole_positions": 77,
+    "president": "Dietrich Mateschitz",
+    "technical_manager": "Pierre Waché",
+    "tyres": "Pirelli",
+    "world_championships": 4
+  },
+  {
+    "base": "Woking, United Kingdom",
+    "chassis": "MCL36",
+    "director": "Andreas Seidl",
+    "engine": "Mercedes",
+    "fastest_laps": 161,
+    "first_team_entry": 1966,
+    "highest_race_finish": {
+      "number": 183,
+      "position": 1
+    },
+    "id": 2,
+    "logo": "https://media.api-sports.io/formula-1/teams/2.png",
+    "name": "McLaren Racing",
+    "pole_positions": 156,
+    "president": "Zak Brown",
+    "technical_manager": "James Key",
+    "tyres": "Pirelli",
+    "world_championships": 8
+  },
+  {
+    "base": "Maranello, Italy",
+    "chassis": "F1-75",
+    "director": "Mattia Binotto",
+    "engine": "Ferrari",
+    "fastest_laps": 258,
+    "first_team_entry": 1950,
+    "highest_race_finish": {
+      "number": 243,
+      "position": 1
+    },
+    "id": 3,
+    "logo": "https://media.api-sports.io/formula-1/teams/3.png",
+    "name": "Scuderia Ferrari",
+    "pole_positions": 239,
+    "president": "John Elkann",
+    "technical_manager": "Enrico Cardile / Enrico Gualtieri",
+    "tyres": "Pirelli",
+    "world_championships": 16
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Robert Fernley",
+    "engine": "Ferrari V8, Mercedes V8, Mercedes V6 turbo",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 4,
+    "logo": "https://media.api-sports.io/formula-1/teams/4.png",
+    "name": "Force India",
+    "pole_positions": null,
+    "president": "Subrata Roy, Vijay Mallya",
+    "technical_manager": "Andrew Green",
+    "tyres": "Bridgestone, Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": "Brackley, United Kingdom",
+    "chassis": "W13",
+    "director": "Toto Wolff",
+    "engine": "Mercedes",
+    "fastest_laps": 87,
+    "first_team_entry": 1970,
+    "highest_race_finish": {
+      "number": 115,
+      "position": 1
+    },
+    "id": 5,
+    "logo": "https://media.api-sports.io/formula-1/teams/5.png",
+    "name": "Mercedes-AMG Petronas",
+    "pole_positions": 128,
+    "president": "Markus Schäfer",
+    "technical_manager": "Mike Elliott",
+    "tyres": "Pirelli",
+    "world_championships": 8
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Éric Boullier, Matthew Carter",
+    "engine": "Mercedes",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 6,
+    "logo": "https://media.api-sports.io/formula-1/teams/6.png",
+    "name": "Lotus F1 Team",
+    "pole_positions": null,
+    "president": "Gérard Lopez, Éric Lux,Andrew Ruhan",
+    "technical_manager": "James Allison, Nick Chester",
+    "tyres": "Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": "Faenza, Italy",
+    "chassis": "AT03",
+    "director": "Franz Tost",
+    "engine": "Red Bull Powertrains",
+    "fastest_laps": 2,
+    "first_team_entry": 1985,
+    "highest_race_finish": {
+      "number": 2,
+      "position": 1
+    },
+    "id": 7,
+    "logo": "https://media.api-sports.io/formula-1/teams/7.png",
+    "name": "Scuderia AlphaTauri Honda",
+    "pole_positions": 1,
+    "president": "Dietrich Mateschitz",
+    "technical_manager": "Jody Egginton",
+    "tyres": "Pirelli",
+    "world_championships": 0
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Frédéric Vasseur",
+    "engine": "Ferrari V6 turbo Type 062 EVO",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 8,
+    "logo": "https://media.api-sports.io/formula-1/teams/8.png",
+    "name": "Sauber F1 Team",
+    "pole_positions": null,
+    "president": "Pascal Picci",
+    "technical_manager": "Simone Resta",
+    "tyres": "Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Abdulla Boulsien",
+    "engine": "Cosworth, Ferrari",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 9,
+    "logo": "https://media.api-sports.io/formula-1/teams/9.png",
+    "name": "Manor Marussia F1 Team",
+    "pole_positions": null,
+    "president": "Stephen Fitzpatrick",
+    "technical_manager": "John McQuilliam",
+    "tyres": "Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Riad Asmat, Steve Nielsen, Cyril Abiteboul, Christijan Albers, Manfredi Ravetto",
+    "engine": "Renault",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 10,
+    "logo": "https://media.api-sports.io/formula-1/teams/10.png",
+    "name": "Caterham F1 Team",
+    "pole_positions": null,
+    "president": "Tony Fernandes, Graham Macdonald, Colin Kolles, Finbarr O'Connell",
+    "technical_manager": "Mike Gascoyne, Mark Smith, John Iley",
+    "tyres": "Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Luis Pérez-Sala",
+    "engine": "Cosworth",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 11,
+    "logo": "https://media.api-sports.io/formula-1/teams/11.png",
+    "name": "HRT Formula One Team",
+    "pole_positions": null,
+    "president": "Saul Ruiz de Marcos",
+    "technical_manager": "Toni Cuquerella",
+    "tyres": "Bridgestone, Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": "Grove, United Kingdom",
+    "chassis": "FW44",
+    "director": "Jost Capito",
+    "engine": "Mercedes",
+    "fastest_laps": 133,
+    "first_team_entry": 1978,
+    "highest_race_finish": {
+      "number": 114,
+      "position": 1
+    },
+    "id": 12,
+    "logo": "https://media.api-sports.io/formula-1/teams/12.png",
+    "name": "Williams F1 Team",
+    "pole_positions": 128,
+    "president": "Claire Williams",
+    "technical_manager": "François-Xavier Demaison",
+    "tyres": "Pirelli",
+    "world_championships": 9
+  },
+  {
+    "base": "Enstone, United Kingdom",
+    "chassis": "A522",
+    "director": "Otmar Szafnauer",
+    "engine": "Renault",
+    "fastest_laps": 15,
+    "first_team_entry": 1986,
+    "highest_race_finish": {
+      "number": 21,
+      "position": 1
+    },
+    "id": 13,
+    "logo": "https://media.api-sports.io/formula-1/teams/13.png",
+    "name": "Alpine F1 Team",
+    "pole_positions": 20,
+    "president": "Alain Prost, Jérôme Stoll ",
+    "technical_manager": "Pat Fry",
+    "tyres": "Pirelli",
+    "world_championships": 2
+  },
+  {
+    "base": "Kannapolis, United States",
+    "chassis": "VF-22",
+    "director": "Guenther Steiner",
+    "engine": "Ferrari",
+    "fastest_laps": 2,
+    "first_team_entry": 2016,
+    "highest_race_finish": {
+      "number": 1,
+      "position": 4
+    },
+    "id": 14,
+    "logo": "https://media.api-sports.io/formula-1/teams/14.png",
+    "name": "Haas F1 Team",
+    "pole_positions": 0,
+    "president": "Gene Haas",
+    "technical_manager": "Simone Resta",
+    "tyres": "Pirelli",
+    "world_championships": 0
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Alex Tai",
+    "engine": "Spark SRT_01E Renault",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 15,
+    "logo": "https://media.api-sports.io/formula-1/teams/15.png",
+    "name": "Virgin Racing",
+    "pole_positions": null,
+    "president": "Richard Branson",
+    "technical_manager": null,
+    "tyres": "Michelin",
+    "world_championships": null
+  },
+  {
+    "base": null,
+    "chassis": null,
+    "director": "Thomas Mayer",
+    "engine": "Mercedes V6 turbo hybride",
+    "fastest_laps": null,
+    "first_team_entry": null,
+    "highest_race_finish": {
+      "number": null,
+      "position": null
+    },
+    "id": 16,
+    "logo": "https://media.api-sports.io/formula-1/teams/16.png",
+    "name": "Manor Racing",
+    "pole_positions": null,
+    "president": "Stephen Fitzpatrick",
+    "technical_manager": "John McQuilliam, Nikolas Tombazis",
+    "tyres": "Pirelli",
+    "world_championships": null
+  },
+  {
+    "base": "Silverstone, United Kingdom",
+    "chassis": "AMR22",
+    "director": "Mike Krack",
+    "engine": "Mercedes",
+    "fastest_laps": 0,
+    "first_team_entry": 2018,
+    "highest_race_finish": {
+      "number": 1,
+      "position": 1
+    },
+    "id": 17,
+    "logo": "https://media.api-sports.io/formula-1/teams/17.png",
+    "name": "Aston Martin F1 Team",
+    "pole_positions": 1,
+    "president": "Lawrence Stroll",
+    "technical_manager": "Andrew Green",
+    "tyres": "Pirelli",
+    "world_championships": 0
+  },
+  {
+    "base": "Hinwil, Switzerland",
+    "chassis": "C42",
+    "director": "Frédéric Vasseur",
+    "engine": "Ferrari",
+    "fastest_laps": 5,
+    "first_team_entry": 1993,
+    "highest_race_finish": {
+      "number": 1,
+      "position": 1
+    },
+    "id": 18,
+    "logo": "https://media.api-sports.io/formula-1/teams/18.png",
+    "name": "Alfa Romeo",
+    "pole_positions": 1,
+    "president": "Pascal Picci",
+    "technical_manager": "Jan Monchaux",
+    "tyres": "Pirelli",
+    "world_championships": 0
+  }
+]
