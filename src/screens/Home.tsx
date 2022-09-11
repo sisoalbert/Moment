@@ -14,13 +14,6 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
       <SafeAreaView>
         <Header />
         <View>
-          {/* <Button
-            title="hello"
-            onPress={() => {
-              // Alert.alert("Welcome");
-              navigation.navigate('Details');
-            }}
-          /> */}
           <HomeContents />
         </View>
       </SafeAreaView>
@@ -31,3 +24,13 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
 export default Home;
 
 const styles = StyleSheet.create({});
+
+{
+  /* <Button
+            title="hello"
+            onPress={() => {
+              // Alert.alert("Welcome");
+              navigation.navigate('Details');
+            }}
+          /> */
+}

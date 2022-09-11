@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Details from '../screens/Details';
 import Home from '../screens/Home';
-// import MainTabs from "../navigation/MainTabs";
+import MainTabs from './MainTabs';
 
 const MainStack = createNativeStackNavigator();
 const Main = () => {
@@ -12,7 +12,7 @@ const Main = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <MainStack.Screen name="MainTabs" component={Home} />
+      <MainStack.Screen name="MainTabs" component={MainTabs} />
       <MainStack.Screen name="Details" component={Details} />
       {/* <MainStack.Screen name="Search" component={Search} /> */}
     </MainStack.Navigator>

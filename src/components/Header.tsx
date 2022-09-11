@@ -16,7 +16,7 @@ const Header = () => {
       <Text
         style={{
           fontSize: 20,
-          color: '#54902F',
+          color: 'red',
           fontWeight: '500',
         }}>
         Moment
