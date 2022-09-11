@@ -3,6 +3,8 @@
   "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
 
   "compilerOptions": {
+
+    
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Projects */
@@ -15,6 +17,9 @@
 
     /* Language and Environment */
     "target": "esnext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    
+    
+    
     "lib": ["es2017", "es5", "es6", "dom", "dom.iterable"],                                   /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "jsx": "react-native",                               /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
@@ -101,6 +106,8 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
+  "typeRoots": ["./src/types"],
+
   "exclude": [
     "node_modules", "babel.config.js", "metro.config.js", "jest.config.js"
   ]
