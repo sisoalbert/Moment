@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 import favSlice from './favSlice';
-import uiReducer from './uiReducer';
+import uiReducer from './uiSlice';
 
 const store = configureStore({
   reducer: {
