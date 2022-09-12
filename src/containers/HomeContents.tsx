@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
   HomeScreenNavigationProp,
@@ -19,6 +19,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 
 import Data from '../assets/data.json';
+import teamsData from '../assets/rankings';
 import {CLIENT_ID} from '@env';
 
 interface HomeContentsProps {
@@ -54,7 +55,6 @@ const HomeContents = () => {
   const getTeams = async () => {
     try {
       const response = await fetch(
-        // 'https://v1.formula-1.api-sports.io/status'
         'https://v1.formula-1.api-sports.io/rankings/drivers?season=2021',
         {
           method: 'GET',
@@ -64,6 +64,7 @@ const HomeContents = () => {
           },
         },
       );
+      console.log(response);
       const json = await response.json();
       setData(json.response);
     } catch (error) {
@@ -77,73 +78,79 @@ const HomeContents = () => {
     getTeams();
   }, []);
 
-  const renderCard = ({item}: ListRenderItemInfo<ItemType & driver>) => {
-    const windowWidth = Dimensions.get('window').width;
-    const windowHeight = Dimensions.get('window').height;
+  const renderCard = useCallback(
+    ({item}: ListRenderItemInfo<ItemType & driver>) => {
+      const windowWidth = Dimensions.get('window').width;
 
-    return (
-      <TouchableOpacity style={styles.cardContainer}>
-        <View
-          style={{
-            width: windowWidth / 2.2,
-            height: windowWidth / 2,
-          }}>
-          <View style={styles.driverNameContainer}>
-            <Text style={styles.driverName}>{item.driver.name}</Text>
-          </View>
-
+      return (
+        <TouchableOpacity style={styles.cardContainer}>
           <View
             style={{
-              //   backgroundColor: 'coral',
-              position: 'absolute',
-              bottom: 10,
-              right: 0,
+              width: windowWidth / 2.2,
+              height: windowWidth / 2,
             }}>
-            <Image
-              source={{
-                uri: item.driver.image,
-              }}
+            <View style={styles.driverNameContainer}>
+              <Text style={styles.driverName}>{item.driver.name}</Text>
+            </View>
+
+            <View
               style={{
-                width: windowWidth / 3,
-                height: windowWidth / 3,
-                //   resizeMode: 'stretch',
-                resizeMode: 'contain',
+                //   backgroundColor: 'coral',
+                position: 'absolute',
+                bottom: 10,
+                right: 0,
+              }}>
+              <Image
+                source={{
+                  uri: item.driver.image,
+                }}
+                style={{
+                  width: windowWidth / 3,
+                  height: windowWidth / 3,
+                  //   resizeMode: 'stretch',
+                  resizeMode: 'contain',
+                }}
+              />
+            </View>
+            <View style={{paddingLeft: 10}}>
+              <Image
+                source={{
+                  uri: item.team.logo,
+                }}
+                style={{
+                  width: windowWidth / 10,
+                  height: windowWidth / 10,
+                  //   resizeMode: 'stretch',
+                  resizeMode: 'contain',
+                }}
+              />
+            </View>
+            <Button
+              title="hello"
+              onPress={() => {
+                // Alert.alert("Welcome");
+                navigation.navigate('Details', {id: item.driver.id});
               }}
             />
-          </View>
-          <View style={{paddingLeft: 10}}>
-            <Image
-              source={{
-                uri: item.team.logo,
-              }}
+            <TouchableOpacity
               style={{
-                width: windowWidth / 10,
-                height: windowWidth / 10,
-                //   resizeMode: 'stretch',
-                resizeMode: 'contain',
-              }}
-            />
+                //   backgroundColor: 'coral',
+                position: 'absolute',
+                bottom: 10,
+                left: 10,
+              }}>
+              <Text style={{fontSize: 30, color: 'red'}}>O</Text>
+            </TouchableOpacity>
           </View>
-          <Button
-            title="hello"
-            onPress={() => {
-              // Alert.alert("Welcome");
-              navigation.navigate('Details', {name: item.driver.name});
-            }}
-          />
-          <TouchableOpacity
-            style={{
-              //   backgroundColor: 'coral',
-              position: 'absolute',
-              bottom: 10,
-              left: 10,
-            }}>
-            <Text style={{fontSize: 30, color: 'red'}}>O</Text>
-          </TouchableOpacity>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+        </TouchableOpacity>
+      );
+    },
+    [],
+  );
+
+  const keyExtractor = useCallback((item: ItemType) => {
+    return item.driver.name;
+  }, []);
 
   const ListFooterComponent = () => {
     return <View style={{height: 200}} />;
@@ -155,11 +162,12 @@ const HomeContents = () => {
         <ActivityIndicator size="large" color="red" />
       ) : (
         <FlatList
-          data={data}
+          data={teamsData}
+          // data={data}
           showsVerticalScrollIndicator={false}
           numColumns={2} // set number of columns
           columnWrapperStyle={styles.row} // space them out evenly
-          keyExtractor={(item: ItemType) => item.driver.name}
+          keyExtractor={keyExtractor}
           renderItem={renderCard}
           ListFooterComponent={ListFooterComponent}
         />

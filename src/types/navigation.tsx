@@ -4,7 +4,7 @@ import type {RouteProp} from '@react-navigation/native';
 export type MainStackParamList = {
   MainTabs: undefined;
   Details: {
-    name: string;
+    id: number;
   };
 };
 
