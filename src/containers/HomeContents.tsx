@@ -8,8 +8,16 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {
+  HomeScreenNavigationProp,
+  MainStackParamList,
+} from '../types/navigation';
+import {useNavigation} from '@react-navigation/native';
+
 import Data from '../assets/data.json';
 import {CLIENT_ID} from '@env';
 
@@ -38,7 +46,8 @@ interface ItemType {
   image: string;
 }
 
-const HomeContents: React.FC<HomeContentsProps> = () => {
+const HomeContents = () => {
+  const navigation = useNavigation<HomeScreenNavigationProp>();
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -115,6 +124,13 @@ const HomeContents: React.FC<HomeContentsProps> = () => {
               }}
             />
           </View>
+          <Button
+            title="hello"
+            onPress={() => {
+              // Alert.alert("Welcome");
+              navigation.navigate('Details', {name: item.driver.name});
+            }}
+          />
           <TouchableOpacity
             style={{
               //   backgroundColor: 'coral',
@@ -129,6 +145,10 @@ const HomeContents: React.FC<HomeContentsProps> = () => {
     );
   };
 
+  const ListFooterComponent = () => {
+    return <View style={{height: 200}} />;
+  };
+
   return (
     <View>
       {isLoading ? (
@@ -141,6 +161,7 @@ const HomeContents: React.FC<HomeContentsProps> = () => {
           columnWrapperStyle={styles.row} // space them out evenly
           keyExtractor={(item: ItemType) => item.driver.name}
           renderItem={renderCard}
+          ListFooterComponent={ListFooterComponent}
         />
       )}
     </View>

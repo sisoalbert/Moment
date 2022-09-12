@@ -2,6 +2,8 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+import {MainTabsParamList} from '../types/navigation';
+
 import Home from '../screens/Home';
 import Favourites from '../screens/Favourites';
 import {View, Text} from 'react-native';
@@ -9,7 +11,7 @@ import {View, Text} from 'react-native';
 // import TabBarIcon from "../components/TabBarIcon";
 
 //
-const Tabs = createBottomTabNavigator();
+const Tabs = createBottomTabNavigator<MainTabsParamList>();
 const MainTabs = () => {
   return (
     <Tabs.Navigator
