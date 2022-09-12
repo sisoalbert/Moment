@@ -60,7 +60,7 @@ const HomeContents = () => {
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'v1.formula-1.api-sports.io',
-            'x-rapidapi-key': CLIENT_ID,
+            // 'x-rapidapi-key': CLIENT_ID,
           },
           redirect: 'follow',
         },

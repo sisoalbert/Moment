@@ -3,6 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {MainTabsParamList} from '../types/navigation';
+import {MaterialIcon} from '../components/Icon';
 
 import Home from '../screens/Home';
 import Favourites from '../screens/Favourites';
@@ -35,7 +36,7 @@ const MainTabs = () => {
           ),
           tabBarIcon: ({focused}) => (
             <View>
-              <Text>O</Text>
+              <MaterialIcon size="large" color="red" name="home" />
             </View>
 
             // <TabBarIcon focused={focused} icon={"md-home"} />
@@ -55,7 +56,7 @@ const MainTabs = () => {
           ),
           tabBarIcon: ({focused}) => (
             <View>
-              <Text>O</Text>
+              <MaterialIcon size="large" color="red" name="heart" />
             </View>
 
             // <TabBarIcon focused={focused} icon={'heart'} />

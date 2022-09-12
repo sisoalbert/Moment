@@ -1,11 +1,12 @@
 import React from 'react';
 import {Text} from 'react-native';
 // import {Ionicons} from '@expo/vector-icons';
+import {MaterialIcon} from '../components/Icon';
 
-export default () => {
+export default (icon: string) => {
   return (
     <>
-      <Text>gi</Text>
+      <MaterialIcon size="extraLarge" color="red" name={icon} />
     </>
     // <Ionicons
     //   name={icon}

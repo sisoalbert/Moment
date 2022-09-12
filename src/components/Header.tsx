@@ -2,6 +2,7 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 // import { AntDesign } from "@expo/vector-icons";
 // import colors from "../constants/GlobalStyles";
+import {MaterialIcon} from '../components/Icon';
 
 const Header = () => {
   return (
@@ -13,27 +14,18 @@ const Header = () => {
         alignItems: 'center',
         // flex: 1,
       }}>
+      {/* <TouchableOpacity>
+        <MaterialIcon size="extraLarge" color="red" name="menu-left" />
+      </TouchableOpacity> */}
       <Text
         style={{
           fontSize: 20,
           color: 'red',
           fontWeight: '500',
         }}>
-        Moment
+        Moment F1
       </Text>
 
-      <TouchableOpacity
-        style={{
-          flex: 0.25,
-          alignItems: 'flex-start',
-        }}>
-        <Text
-          style={{
-            fontSize: 20,
-            color: '#54902F',
-            fontWeight: '500',
-          }}></Text>
-      </TouchableOpacity>
       <View
         style={{
           flex: 0.5,
