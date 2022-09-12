@@ -63,6 +63,15 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
     // console.log('====================================');
   }, []);
 
+  type driverData = {
+    id: number;
+    uri: string;
+    name: string;
+    nationality: string;
+    highest_grid_position: string;
+    career_points: string;
+  };
+
   const ListHeaderComponent = () => {
     return (
       <View style={styles.container}>
@@ -116,7 +125,7 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
               fontWeight: 'bold',
               color: 'grey',
             }}>
-            {driverData.nationality}
+            {data[0].nationality}
           </Text>
 
           <Text
