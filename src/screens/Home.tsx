@@ -19,6 +19,17 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
+        {!isConnected ? (
+          <></>
+        ) : (
+          <>
+            <View style={{height: 20, width: '100%', backgroundColor: 'black'}}>
+              <Text style={{color: 'white', fontSize: 15}}>
+                Please connect to the internet!
+              </Text>
+            </View>
+          </>
+        )}
         <Header />
         <View>
           <HomeContents />
@@ -31,13 +42,3 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
 export default Home;
 
 const styles = StyleSheet.create({});
-
-{
-  /* <Button
-            title="hello"
-            onPress={() => {
-              // Alert.alert("Welcome");
-              navigation.navigate('Details');
-            }}
-          /> */
-}
