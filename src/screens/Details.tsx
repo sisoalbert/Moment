@@ -27,18 +27,25 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
   const [data, setData] = useState([]);
   const windowWidth = Dimensions.get('window').width;
 
+  // console.log('====================================');
+  // console.log('this is data', data);
+  // console.log('====================================');
+
+  // console.log(data[0].birthdate);
+
+  const URL =
+    'https://v1.formula-1.api-sports.io/drivers?id=' + route.params.id;
+
   const getDriver = async () => {
     try {
-      const response = await fetch(
-        'https://v1.formula-1.api-sports.io/drivers?id=1',
-        {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-host': 'api-formula-1.p.rapidapi.com',
-            'x-rapidapi-key': CLIENT_ID,
-          },
+      const response = await fetch(URL, {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-host': 'v1.formula-1.api-sports.io',
+          'x-rapidapi-key': CLIENT_ID,
         },
-      );
+        redirect: 'follow',
+      });
       console.log(response);
       const json = await response.json();
       setData(json.response);
@@ -82,7 +89,8 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
           <Image
             source={{
               // uri: item.team.logo,
-              uri: driverData.image,
+              // uri: driverData.image,
+              uri: data[0].image,
             }}
             style={{
               width: windowWidth / 2,
@@ -106,7 +114,8 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
               color: 'white',
               paddingTop: 10,
             }}>
-            {driverData.name}
+            {/* {driverData.name} */}
+            {data[0].name}
           </Text>
           <Text
             style={{
@@ -123,7 +132,7 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
               fontWeight: 'bold',
               color: 'white',
             }}>
-            {driverData.highest_grid_position}
+            {data[0].highest_grid_position}
           </Text>
           <Text
             style={{
@@ -139,7 +148,7 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
               fontWeight: 'bold',
               color: 'white',
             }}>
-            {driverData.career_points}
+            {data[0].career_points}
           </Text>
           <Text
             style={{
