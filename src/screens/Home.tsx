@@ -14,7 +14,7 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
       <SafeAreaView>
         <Header />
         <View>
-          <HomeContents />
+          <HomeContents name={''} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
