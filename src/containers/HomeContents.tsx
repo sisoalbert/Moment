@@ -84,7 +84,12 @@ const HomeContents = () => {
       const windowWidth = Dimensions.get('window').width;
 
       return (
-        <TouchableOpacity style={styles.cardContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            // Alert.alert("Welcome");
+            navigation.navigate('Details', {id: item.driver.id});
+          }}
+          style={styles.cardContainer}>
           <View
             style={{
               width: windowWidth / 2.2,
@@ -126,13 +131,6 @@ const HomeContents = () => {
                 }}
               />
             </View>
-            <Button
-              title="hello"
-              onPress={() => {
-                // Alert.alert("Welcome");
-                navigation.navigate('Details', {id: item.driver.id});
-              }}
-            />
             <TouchableOpacity
               style={{
                 //   backgroundColor: 'coral',

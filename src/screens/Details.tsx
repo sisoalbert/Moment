@@ -73,13 +73,6 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
             navigation.navigate('MainTabs');
           }}
         />
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 10,
-          }}>
-          {route.params.id}
-        </Text>
 
         <View
           style={{
