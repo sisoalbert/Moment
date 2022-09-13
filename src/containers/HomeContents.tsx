@@ -24,6 +24,7 @@ import teamsData from '../assets/rankings';
 import {CLIENT_ID} from '@env';
 import {useAppDispatch, useAppSelector} from '../hooks';
 import {addNewBook} from '../redux/favSlice';
+import {MaterialIcon} from '../components/Icon';
 
 interface HomeContentsProps {
   name: string;
@@ -158,7 +159,11 @@ const HomeContents = () => {
                 bottom: 10,
                 left: 10,
               }}>
-              <Text style={{fontSize: 30, color: 'red'}}>O</Text>
+              <MaterialIcon
+                size="large"
+                color="red"
+                name="cards-heart-outline"
+              />
             </TouchableOpacity>
           </View>
         </TouchableOpacity>

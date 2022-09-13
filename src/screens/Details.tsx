@@ -20,18 +20,15 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {MainStackParamList, DetailsScreenRouteProp} from '../types/navigation';
 import driverData from '../assets/driver.json';
 import {CLIENT_ID} from '@env';
+import {useAppDispatch, useAppSelector} from '../hooks';
+import {addNewBook} from '../redux/favSlice';
 
 const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
   const route = useRoute<DetailsScreenRouteProp>();
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const windowWidth = Dimensions.get('window').width;
-
-  // console.log('====================================');
-  // console.log('this is data', data);
-  // console.log('====================================');
-
-  // console.log(data[0].birthdate);
+  const dispatch = useAppDispatch();
 
   const URL =
     'https://v1.formula-1.api-sports.io/drivers?id=' + route.params.id;
@@ -58,22 +55,11 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
 
   useEffect(() => {
     getDriver();
-    // console.log('====================================');
-    // console.log(driverData);
-    // console.log('====================================');
   }, []);
 
   const ListHeaderComponent = () => {
     return (
       <View style={styles.container}>
-        <Button
-          title="back to Home"
-          onPress={() => {
-            // Alert.alert("Welcome");
-            navigation.navigate('MainTabs');
-          }}
-        />
-
         <View
           style={{
             justifyContent: 'center',
@@ -81,20 +67,15 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
           }}>
           <Image
             source={{
-              // uri: item.team.logo,
-              // uri: driverData.image,
               uri: data[0].image,
             }}
             style={{
               width: windowWidth / 2,
               height: windowWidth / 2,
-              //   resizeMode: 'stretch',
               resizeMode: 'contain',
             }}
           />
         </View>
-        {/* "highest_grid_position": 1,
-"career_points": "4311.5", */}
         <View
           style={{
             justifyContent: 'center',
@@ -107,7 +88,6 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
               color: 'white',
               paddingTop: 10,
             }}>
-            {/* {driverData.name} */}
             {data[0].name}
           </Text>
           <Text
@@ -156,46 +136,34 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
     );
   };
 
-  // const keyExtractor = useCallback((item: ItemType) => {
-  //   return 5;
-  // }, []);
-
-  const ListFooterComponent = () => {
-    return <View style={{height: 200}} />;
-  };
-
-  const renderCard = () => {
-    return (
-      <View
-        style={{
-          backgroundColor: 'coral',
-          width: '100%',
-          height: '100%',
-        }}
-      />
-    );
-  };
+  console.log('====================================');
+  console.log(data[0]);
+  console.log('====================================');
 
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <Header />
+        <Header
+          onPress={() => {
+            // Alert.alert("Welcome");
+            navigation.navigate('MainTabs');
+          }}
+          heartPress={() => {
+            dispatch(
+              addNewBook({
+                id: data[0].id,
+                image: data[0].image,
+                name: data[0].name,
+                position: data[0].position,
+              }),
+            );
+          }}
+        />
         {isLoading ? (
           <ActivityIndicator size="large" color="red" />
         ) : (
           <ListHeaderComponent />
         )}
-
-        {/* <FlatList
-          data={driverData.teams}
-          showsVerticalScrollIndicator={false}
-          numColumns={2} // set number of columns
-          columnWrapperStyle={styles.row} // space them out evenly
-          keyExtractor={keyExtractor}
-          renderItem={renderCard}
-          ListHeaderComponent={ListHeaderComponent}
-          ListFooterComponent={ListFooterComponent}
-        /> */}
       </SafeAreaView>
     </SafeAreaProvider>
   );

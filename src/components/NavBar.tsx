@@ -1,13 +1,20 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {MaterialIcon} from '../components/Icon';
+import {MaterialIcon} from './Icon';
 
-const NavBar = props => {
+const NavBar = () => {
   return (
     <View style={styles.navBar}>
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialIcon size="large" color="black" name="keyboard-backspace" />
-      </TouchableOpacity>
+      <View>
+        <Image
+          source={require('../assets/logo.png')}
+          style={{
+            width: 40,
+            height: 40,
+            resizeMode: 'contain',
+          }}
+        />
+      </View>
       <Text
         style={{
           fontSize: 20,
@@ -16,8 +23,10 @@ const NavBar = props => {
         }}>
         Moment F1
       </Text>
-      <TouchableOpacity onPress={props.heartPress}>
-        <MaterialIcon size="large" color="black" name="cards-heart-outline" />
+      <TouchableOpacity>
+        <TouchableOpacity>
+          <MaterialIcon size="large" color="black" name="filter-outline" />
+        </TouchableOpacity>
       </TouchableOpacity>
     </View>
   );

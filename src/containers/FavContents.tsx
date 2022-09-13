@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import {useAppDispatch, useAppSelector} from '../hooks';
 import {deleteBook} from '../redux/favSlice';
+import {MaterialIcon} from '../components/Icon';
 
 const FavContents = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +18,7 @@ const FavContents = () => {
   const bookList = useAppSelector(state => state.book.bookList);
   //   console.log(bookList);
 
-  const BookInfo = ({
+  const FavCard = ({
     position,
     author,
     name,
@@ -36,7 +37,7 @@ const FavContents = () => {
       <View
         style={{
           height: 100,
-          backgroundColor: 'coral',
+          backgroundColor: '#011526',
           borderRadius: 10,
           margin: 10,
           flexDirection: 'row',
@@ -48,6 +49,7 @@ const FavContents = () => {
             flex: 0.2,
             height: 50,
             width: 50,
+            borderRadius: 25,
             backgroundColor: 'black',
           }}>
           <Image
@@ -61,9 +63,32 @@ const FavContents = () => {
             }}
           />
         </View>
-        <View style={{flex: 0.6}}>
-          <Text>{position}</Text>
-          <Text>{name}</Text>
+        <View style={{flex: 0.6, paddingLeft: 20}}>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
+            {name}
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'grey',
+            }}>
+            Position
+          </Text>
+
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
+            {position}
+          </Text>
         </View>
         <View style={{flex: 0.2}}>
           <TouchableOpacity
@@ -71,8 +96,13 @@ const FavContents = () => {
             style={{
               height: 50,
               width: 50,
+              borderRadius: 25,
               backgroundColor: 'red',
-            }}></TouchableOpacity>
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <MaterialIcon size="large" color="black" name="delete" />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -80,9 +110,8 @@ const FavContents = () => {
 
   return (
     <View>
-      <Text>FavContents</Text>
       {bookList.map(book => (
-        <BookInfo
+        <FavCard
           key={book.position}
           position={book.position}
           author={undefined}

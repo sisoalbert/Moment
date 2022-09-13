@@ -6,7 +6,7 @@ import {MainStackParamList} from '../types/navigation';
 import NetInfo from '@react-native-community/netinfo';
 
 //Screen imports
-import Header from '../components/Header';
+import NavBar from '../components/NavBar';
 import HomeContents from '../containers/HomeContents';
 
 const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
@@ -30,8 +30,9 @@ const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
             </View>
           </>
         )}
-        <Header />
         <View>
+          <NavBar />
+
           <HomeContents />
         </View>
       </SafeAreaView>
