@@ -21,7 +21,6 @@ export const bookSlice = createSlice({
       console.log(action.payload);
       console.log('====================================');
       state.bookList.push(action.payload);
-      // state.push(action.payload);
     },
     deleteBook: (state, action: PayloadAction<{id: number}>) => {
       console.log('====================================');
