@@ -22,6 +22,8 @@ import {useNavigation} from '@react-navigation/native';
 import Data from '../assets/data.json';
 import teamsData from '../assets/rankings';
 import {CLIENT_ID} from '@env';
+import {useAppDispatch, useAppSelector} from '../hooks';
+import {addNewBook} from '../redux/favSlice';
 
 interface HomeContentsProps {
   name: string;
@@ -53,6 +55,11 @@ const HomeContents = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+  const dispatch = useAppDispatch();
+  // const book = useAppSelector((state) =>
+  //   state.book.bookList.find((book) => book.id === id)
+  // );
+
   const getTeams = async () => {
     try {
       const response = await fetch(
@@ -78,7 +85,12 @@ const HomeContents = () => {
 
   useEffect(() => {
     getTeams();
+    // setData(teamsData);
   }, []);
+
+  // const handleOnSubmit = item => {
+  //   dispatch(addNewBook({item}));
+  // };
 
   const renderCard = useCallback(
     ({item}: ListRenderItemInfo<ItemType & driver>) => {
@@ -102,7 +114,6 @@ const HomeContents = () => {
 
             <View
               style={{
-                //   backgroundColor: 'coral',
                 position: 'absolute',
                 bottom: 10,
                 right: 0,
@@ -114,7 +125,6 @@ const HomeContents = () => {
                 style={{
                   width: windowWidth / 3,
                   height: windowWidth / 3,
-                  //   resizeMode: 'stretch',
                   resizeMode: 'contain',
                 }}
               />
@@ -127,14 +137,23 @@ const HomeContents = () => {
                 style={{
                   width: windowWidth / 10,
                   height: windowWidth / 10,
-                  //   resizeMode: 'stretch',
                   resizeMode: 'contain',
                 }}
               />
             </View>
             <TouchableOpacity
+              onPress={() => {
+                //add the players to the players array
+                dispatch(
+                  addNewBook({
+                    id: item.driver.id,
+                    image: item.driver.image,
+                    name: item.driver.name,
+                    position: item.position,
+                  }),
+                );
+              }}
               style={{
-                //   backgroundColor: 'coral',
                 position: 'absolute',
                 bottom: 10,
                 left: 10,
