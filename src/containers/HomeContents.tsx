@@ -57,9 +57,6 @@ const HomeContents = () => {
   const [data, setData] = useState([]);
 
   const dispatch = useAppDispatch();
-  // const book = useAppSelector((state) =>
-  //   state.book.bookList.find((book) => book.id === id)
-  // );
 
   const getTeams = async () => {
     try {
@@ -69,12 +66,11 @@ const HomeContents = () => {
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'v1.formula-1.api-sports.io',
-            // 'x-rapidapi-key': CLIENT_ID,
+            'x-rapidapi-key': CLIENT_ID,
           },
           redirect: 'follow',
         },
       );
-      // console.log(response);
       const json = await response.json();
       setData(json.response);
     } catch (error) {
@@ -186,8 +182,8 @@ const HomeContents = () => {
         <ActivityIndicator size="large" color="red" />
       ) : (
         <FlatList
-          data={teamsData}
-          // data={data}
+          // data={teamsData}
+          data={data}
           showsVerticalScrollIndicator={false}
           numColumns={2} // set number of columns
           columnWrapperStyle={styles.row} // space them out evenly

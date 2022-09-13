@@ -51,6 +51,7 @@ const FavContents = () => {
             width: 50,
             borderRadius: 25,
             backgroundColor: 'black',
+            marginBottom: 10,
           }}>
           <Image
             source={{
@@ -110,17 +111,45 @@ const FavContents = () => {
 
   return (
     <View>
-      {bookList.map(book => (
-        <FavCard
-          key={book.position}
-          position={book.position}
-          author={undefined}
-          name={book.name}
-          driverImage={book.image}
-          id={book.id}
-          //   id={book.id}
-        />
-      ))}
+      {bookList.length == 0 ? (
+        <View
+          style={{
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text
+            style={{
+              padding: 20,
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: '#011526',
+            }}>
+            The favorites list is empty
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'grey',
+            }}>
+            Add favorites
+          </Text>
+        </View>
+      ) : (
+        <>
+          {bookList.map(book => (
+            <FavCard
+              key={book.id}
+              position={book.position}
+              author={undefined}
+              name={book.name}
+              driverImage={book.image}
+              id={book.id}
+            />
+          ))}
+        </>
+      )}
     </View>
   );
 };

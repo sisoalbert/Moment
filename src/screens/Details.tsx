@@ -136,10 +136,6 @@ const Details = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
     );
   };
 
-  console.log('====================================');
-  console.log(data[0]);
-  console.log('====================================');
-
   return (
     <SafeAreaProvider>
       <SafeAreaView>
