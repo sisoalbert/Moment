@@ -16,6 +16,7 @@ import {
   HomeScreenNavigationProp,
   MainStackParamList,
 } from '../types/navigation';
+import {driverData} from '../types/driverData';
 import {useNavigation} from '@react-navigation/native';
 
 import Data from '../assets/data.json';
@@ -161,8 +162,8 @@ const HomeContents = () => {
         <ActivityIndicator size="large" color="red" />
       ) : (
         <FlatList
-          // data={teamsData}
-          data={data}
+          data={teamsData}
+          // data={data}
           showsVerticalScrollIndicator={false}
           numColumns={2} // set number of columns
           columnWrapperStyle={styles.row} // space them out evenly

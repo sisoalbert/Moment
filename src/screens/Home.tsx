@@ -12,14 +12,14 @@ import HomeContents from '../containers/HomeContents';
 const Home = ({navigation}: NativeStackScreenProps<MainStackParamList>) => {
   const [isConnected, setIsConnect] = useState<boolean | null>();
   // grab information about the network connection just once
-  // NetInfo.fetch().then(state => {
-  //   console.log('Is connected?', state.isConnected);
-  //   setIsConnect(state.isConnected);
-  // });
+  NetInfo.fetch().then(state => {
+    console.log('Is connected?', state.isConnected);
+    setIsConnect(state.isConnected);
+  });
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        {!isConnected ? (
+        {isConnected ? (
           <></>
         ) : (
           <>
